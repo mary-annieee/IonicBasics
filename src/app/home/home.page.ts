@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router'; // Import the Router service
 
 @Component({
   selector: 'app-home',
@@ -7,6 +8,11 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor(private router: Router) {} // Inject the Router service
+  sayHello() {
+     alert('Hello!');
+    this.router.navigateByUrl('second-page');
+
+  }
 
 }
