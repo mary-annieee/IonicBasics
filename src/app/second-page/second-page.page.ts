@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActionSheetController, Platform } from '@ionic/angular';
 
 @Component({
   selector: 'app-second-page',
@@ -11,8 +12,30 @@ export class SecondPagePage implements OnInit {
     { name: 'Item 2', imageUrl: '../../assets/images/MicrosoftTeams-image (1).png' },
     { name: 'Item 3', imageUrl: '../../assets/images/MicrosoftTeams-image (1).png' }
   ];
-  constructor() { }
-
+  constructor(private actionSheetController: ActionSheetController) { }
+  async openMenu() {
+    const actionSheet = await this.actionSheetController.create({
+      header: 'Options',
+      buttons: [{
+        text: 'Option 1',
+        handler: () => {
+          alert('Option 1 clicked');
+        }
+      }, {
+        text: 'Option 2',
+        handler: () => {
+          console.log('Option 2 clicked');
+        }
+      }, {
+        text: 'Cancel',
+        role: 'cancel',
+        handler: () => {
+          console.log('Cancel clicked');
+        }
+      }]
+    });
+    await actionSheet.present();
+  }
   ngOnInit() {
   }
 
