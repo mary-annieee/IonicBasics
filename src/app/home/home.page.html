@@ -17,11 +17,16 @@
     <strong>Ready to create an app?</strong>
     <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
     <ion-row class="ion-justify-content-center">
-    
       <ion-button (click)="sayHello()" expand="block">Hello</ion-button>
-    
     </ion-row>
+    <p>Hi, Bye!</p> <!-- Added paragraph with text -->
+    <ion-list>
+      <ion-item *ngFor="let item of items">
+        <ion-label>{{ item.name }}</ion-label>
+      </ion-item>
+    </ion-list>
   </div>
+
   <!-- <ion-row class="ion-justify-content-center">
     
   <ion-button (click)="sayHello()" expand="block">Hello</ion-button>
