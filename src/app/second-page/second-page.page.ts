@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActionSheetController, Platform } from '@ionic/angular';
+import { Router } from '@angular/router'; // Import the Router service
 
 @Component({
   selector: 'app-second-page',
@@ -12,7 +13,7 @@ export class SecondPagePage implements OnInit {
     { name: 'Item 2', imageUrl: '../../assets/images/MicrosoftTeams-image (1).png' },
     { name: 'Item 3', imageUrl: '../../assets/images/MicrosoftTeams-image (1).png' }
   ];
-  constructor(private actionSheetController: ActionSheetController) { }
+  constructor(private actionSheetController: ActionSheetController, private router:Router) { }
   async openMenu() {
     const actionSheet = await this.actionSheetController.create({
       header: 'Options',
@@ -36,7 +37,18 @@ export class SecondPagePage implements OnInit {
     });
     await actionSheet.present();
   }
+
+  navButton(){
+    this.router.navigateByUrl('/third-page');
+  }
   ngOnInit() {
+    alert('hialert');
+  }
+  ionViewDidEnter(){
+    alert('entered');
+  }
+  ionViewWillLeave(){
+    alert('left');
   }
 
 }
