@@ -1,0 +1,360 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Third-page</ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-searchbar></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <!-- <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Third-page</ion-title>
+    </ion-toolbar>
+  </ion-header> -->
+
+  <ion-button (click)="setOpen(true)">Open</ion-button>
+  <ion-action-sheet [isOpen]="isActionSheetOpen" header="Actions" [buttons]="actionSheetButtons"
+    (didDismiss)="setOpen(false)"></ion-action-sheet>
+
+
+  <ion-accordion-group>
+    <ion-accordion value="first" toggleIcon="caret-down-circle" toggleIconSlot="start">
+      <ion-item slot="header" color="light">
+        <ion-label>First Accordion</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">First Content</div>
+    </ion-accordion>
+    <ion-accordion value="second" [readonly]="true">
+      <ion-item slot="header" color="light">
+        <ion-label>Second Accordion</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">Second Content</div>
+    </ion-accordion>
+    <ion-accordion value="third">
+      <ion-item slot="header" color="light">
+        <ion-label>Third Accordion</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">Third Content</div>
+    </ion-accordion>
+  </ion-accordion-group>
+
+  <ion-button id="present-alert" fill="outline">Click Me</ion-button>
+  <ion-alert trigger="present-alert" header="A Short Title Is Best" subHeader="A Sub Header Is Optional"
+    message="A message should be a short, complete sentence." [buttons]="alertButtons"></ion-alert>
+
+  <ion-button id="present-alert1" shape="round">Click Me</ion-button>
+  <ion-alert trigger="present-alert1" header="Please enter your info" [buttons]="alertButtons"
+    [inputs]="alertInputs"></ion-alert>
+
+  <ion-list>
+    <ion-item>
+      <ion-badge slot="start">2</ion-badge>
+      <ion-label>badge</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-badge slot="end">26</ion-badge>
+      <ion-label>casual</ion-label>
+    </ion-item>
+  </ion-list>
+
+
+  <ion-breadcrumbs>
+    <ion-breadcrumb href="/second-page">Home</ion-breadcrumb>
+    <ion-breadcrumb href="/third-page">Electronics</ion-breadcrumb>
+    <ion-breadcrumb href="/home">Cameras</ion-breadcrumb>
+    <ion-breadcrumb href="/second-page">Film</ion-breadcrumb>
+  </ion-breadcrumbs>
+  <ion-checkbox>I agree to the terms and conditions</ion-checkbox>
+
+  <ion-chip>Default</ion-chip>
+<ion-chip [disabled]="true">Disabled</ion-chip>
+<ion-chip [outline]="true">Outline</ion-chip>
+
+<ion-chip>
+  <ion-avatar>
+    <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+  </ion-avatar>
+  <ion-label>Avatar Chip</ion-label>
+  <ion-icon name="close-circle"></ion-icon>
+</ion-chip>
+
+<ion-chip>
+  <ion-icon name="pin" color="primary"></ion-icon>
+  <ion-label>Icon Chip</ion-label>
+  <ion-icon name="close"></ion-icon>
+</ion-chip>
+
+<ion-datetime presentation="date" [showDefaultButtons]="true"[preferWheel]="true"></ion-datetime>
+<span slot="time-label">Tiempo</span>
+
+<ion-datetime-button datetime="datetime"></ion-datetime-button>
+
+<ion-modal [keepContentsMounted]="true">
+  <ng-template>
+    <ion-datetime id="datetime"></ion-datetime>
+  </ng-template>
+</ion-modal>
+
+<ion-button (click)="openPicker()">Open</ion-button>
+<ion-button [routerLink]="['/second-page']">Go to detail</ion-button>
+
+<swiper-container [slidesPerView]="3" [loop]="true"> 
+
+  <swiper-slide>Slide 1</swiper-slide>
+  <swiper-slide>Slide 2</swiper-slide>
+  <swiper-slide>Slide 3</swiper-slide> 
+  <swiper-slide>Slide 4</swiper-slide>
+  <swiper-slide>Slide 5</swiper-slide>
+  <swiper-slide>Slide 6</swiper-slide> 
+  
+</swiper-container> 
+
+<ion-fab slot="fixed" vertical="top" horizontal="start">
+    <ion-fab-button>
+      <ion-icon name="chevron-forward-circle"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="end">
+      <ion-fab-button>
+        <ion-icon name="document"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button>
+        <ion-icon name="color-palette"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button>
+        <ion-icon name="globe"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+
+
+<ion-grid [fixed]="true">
+  <ion-row>
+    <ion-col>1</ion-col>
+    <ion-col>2</ion-col>
+    <ion-col>3</ion-col>
+  </ion-row>
+</ion-grid>
+
+<ion-grid [fixed]="true">
+  <ion-row>
+    <ion-col>1</ion-col>
+    <ion-col>2</ion-col>
+    <ion-col>3</ion-col>
+    <ion-col>4</ion-col>
+    <ion-col>5</ion-col>
+    <ion-col>6</ion-col>
+  </ion-row>
+</ion-grid>
+
+<ion-grid>
+  <ion-row>
+    <ion-col>1</ion-col>
+    <ion-col>2</ion-col>
+    <ion-col>3</ion-col>
+    <ion-col>4</ion-col>
+    <ion-col>5</ion-col>
+    <ion-col>6</ion-col>
+    <ion-col>7</ion-col>
+    <ion-col>8</ion-col>
+    <ion-col>9</ion-col>
+    <ion-col>10</ion-col>
+    <ion-col>11</ion-col>
+    <ion-col>12</ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>1</ion-col>
+    <ion-col>2</ion-col>
+    <ion-col>3</ion-col>
+    <ion-col>4</ion-col>
+    <ion-col>5</ion-col>
+    <ion-col>6</ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>1</ion-col>
+    <ion-col>2</ion-col>
+    <ion-col>3</ion-col>
+  </ion-row>
+  
+</ion-grid>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let item of items; let index">
+      <ion-avatar slot="start">
+        <img [src]="'https://picsum.photos/80/80?random=' + index" alt="avatar" />
+      </ion-avatar>
+      <ion-label>{{ item }}</ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-infinite-scroll (ionInfinite)="onIonInfinite($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>
+
+<ion-input label="Input with placeholder" placeholder="Enter company name" [clearInput]="true"></ion-input>
+
+<ion-input label="Input with value" value="121 S Pinckney St #300"></ion-input>
+
+
+<ion-list>
+  <ion-item-sliding>
+    <ion-item>
+      <ion-label>Sliding Item with End Options</ion-label>
+    </ion-item>
+
+    <ion-item-options>
+      <ion-item-option>Favorite</ion-item-option>
+      <ion-item-option color="danger">Delete</ion-item-option>
+    </ion-item-options>
+  </ion-item-sliding>
+
+  <ion-item-sliding>
+    <ion-item-options side="start">
+      <ion-item-option color="success">Archive</ion-item-option>
+    </ion-item-options>
+
+    <ion-item>
+      <ion-label>Sliding Item with Start Options</ion-label>
+    </ion-item>
+  </ion-item-sliding>
+
+  <ion-item-sliding>
+    <ion-item-options side="start">
+      <ion-item-option color="success">Archive</ion-item-option>
+    </ion-item-options>
+
+    <ion-item>
+      <ion-label>Sliding Item with Options on Both Sides</ion-label>
+    </ion-item>
+
+    <ion-item-options side="end">
+      <ion-item-option>Favorite</ion-item-option>
+      <ion-item-option color="danger">Delete</ion-item-option>
+    </ion-item-options>
+  </ion-item-sliding>
+</ion-list>
+
+<ion-item-sliding>
+  <ion-item-options side="start">
+  <ion-item-option color="success">Select</ion-item-option>
+  </ion-item-options>
+  <ion-item>
+    <ion-label>Sliding Item with Options on Both Sides</ion-label>
+  </ion-item>
+</ion-item-sliding>
+
+
+
+
+<ion-button expand="block" (click)="setOpeni(true)">Open</ion-button>
+  <ion-modal #modal [isOpen]="isModalOpen" [initialBreakpoint]="0.25" [breakpoints]="[0, 0.25, 0.5, 0.75]"     handleBehavior="cycle"
+  >
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Modal</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="setOpeni(false)">Close</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni illum quidem recusandae ducimus quos
+          reprehenderit. Veniam, molestias quos, dolorum consequuntur nisi deserunt omnis id illo sit cum qui. Eaque,
+          dicta.
+        </p>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+
+  <ion-button id="open-loading">Show Loading</ion-button>
+<ion-loading trigger="open-loading" message="Dismissing after 3 seconds..." duration="3000"></ion-loading>
+
+
+<ion-progress-bar type="indeterminate"></ion-progress-bar>
+<ion-progress-bar [buffer]="buffer" [value]="progress"></ion-progress-bar>
+
+<ion-label>
+  <h3>
+    <ion-skeleton-text [animated]="true" style="width: 80%;"></ion-skeleton-text>
+  </h3>
+  <p>
+    <ion-skeleton-text [animated]="true" style="width: 60%;"></ion-skeleton-text>
+  </p>
+  <p>
+    <ion-skeleton-text [animated]="true" style="width: 30%;"></ion-skeleton-text>
+  </p>
+</ion-label>
+<ion-skeleton-text [animated]="true" style="width: 80%;"></ion-skeleton-text>
+<ion-spinner></ion-spinner>
+<ion-range labelPlacement="start" label="Label at the Start"></ion-range>
+<br />
+
+
+
+
+
+<ion-list>
+  <!-- The reorder gesture is disabled by default, enable it to drag and drop items -->
+  <!-- Casting $event to $any is a temporary fix for this bug https://github.com/ionic-team/ionic-framework/issues/24245 -->
+  <ion-reorder-group [disabled]="false" (ionItemReorder)="handleReorder($any($event))">
+    <ion-item>
+      <ion-label> Item 1 </ion-label>
+      <ion-reorder slot="end"></ion-reorder>
+    </ion-item>
+
+    <ion-item>
+      <ion-label> Item 2 </ion-label>
+      <ion-reorder slot="end"></ion-reorder>
+    </ion-item>
+
+    <ion-item>
+      <ion-label> Item 3 </ion-label>
+      <ion-reorder slot="end"></ion-reorder>
+    </ion-item>
+
+    <ion-item>
+      <ion-label> Item 4 </ion-label>
+      <ion-reorder slot="end"></ion-reorder>
+    </ion-item>
+
+    <ion-item>
+      <ion-label> Item 5 </ion-label>
+      <ion-reorder slot="end"></ion-reorder>
+    </ion-item>
+  </ion-reorder-group>
+</ion-list>
+
+<ion-searchbar placeholder="Custom Placeholder" show-clear-button="focus"></ion-searchbar>
+
+<ion-segment value="default">
+  <ion-segment-button value="default">
+    <ion-label>Default</ion-label>
+  </ion-segment-button>
+  <ion-segment-button value="segment">
+    <ion-label>Segment</ion-label>
+  </ion-segment-button>
+</ion-segment>
+
+
+
+<ion-select label="Default label" placeholder="Favorite Fruit">
+  <ion-select-option value="apple">Apple</ion-select-option>
+  <ion-select-option value="banana">Banana</ion-select-option>
+  <ion-select-option value="orange">Orange</ion-select-option>
+</ion-select>
+
+<ion-button id="open-toast" expand="block">Open</ion-button>
+  <p id="message">This toast example uses triggers to automatically open a toast when the button is clicked.</p>
+  <ion-toast trigger="open-toast" message="This toast will disappear after 5 seconds" [duration]="5000"></ion-toast>
+
+  <ion-toggle>Default Toggle</ion-toggle><br /><br />
+
+</ion-content>

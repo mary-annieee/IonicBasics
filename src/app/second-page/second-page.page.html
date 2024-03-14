@@ -10,4 +10,63 @@
       <ion-title size="large">SecondPage</ion-title>
     </ion-toolbar>
   </ion-header>
+  <P>Hi</P>
+  <ion-row class="ion-justify-content-center">
+    <ion-img src="../../assets/images/MicrosoftTeams-image (1).png" alt="My Image" style="width: 50%; height: auto;"></ion-img> Adjusted styling
+  </ion-row>
+  <p>Hlo</p>
+  <ion-list>
+    <ion-item *ngFor="let item of items">
+      <ion-avatar slot="start">
+        <ion-img [src]="item.imageUrl"></ion-img>
+      </ion-avatar>
+      <ion-label>{{ item.name }}</ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-button color="danger"  (click)="openMenu()" outline>
+    Show Action Sheet
+  </ion-button>
+  <ion-button icon-start>
+  <ion-icon name="home"></ion-icon>
+  Left Icon
+  </ion-button>
+  <ion-card>
+
+    <ion-card-header>
+      Card Header
+    </ion-card-header>
+  
+    <ion-card-content>
+      <p>Hiiiiiiiiiiiiiii</p>
+      <ion-list>
+        <ion-button ion-item>
+          <ion-icon name="cart" item-start></ion-icon>
+          Shopping
+        </ion-button>
+    
+        <ion-button  ion-item (click)="openMenu()">
+          <ion-icon name="medical" item-start></ion-icon>
+          Hospital
+        </ion-button>
+        </ion-list>
+    </ion-card-content>
+  
+  </ion-card>
+
+  <ion-card style="height: auto; width: 50%;">
+    <ion-img src="../../assets/images/MicrosoftTeams-image (1).png" alt="My Image" style="width: 50%; height: 10%;"/>
+    <ion-card-content>
+      <ion-card-title>
+        Nine Inch Nails Live
+        </ion-card-title>
+      <p>
+        The most popular industrial group ever, and largely
+        responsible for bringing the music to a mass audience.
+      </p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-button (click)="navButton()">Navigate3</ion-button>
+  
+
 </ion-content>
